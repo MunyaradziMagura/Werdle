@@ -1,0 +1,2 @@
+# Werdle
+ In Werdle, as in Wordle, players have six attempts to guess a hidden five-letter word. Players enter their five letter word guesses into the game. After entering their guess, each letter of the guess is marked as one of the following: 1) Not in the word, 2) In the word but in the wrong position, and 3) In the word and in the correct position. If the player guesses the word correctly, they win.
