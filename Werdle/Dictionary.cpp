@@ -1,4 +1,5 @@
 #include "Dictionary.h"
+
 const std::string Dictionary::words[] = {
 	"speed",
 	"crowd",
