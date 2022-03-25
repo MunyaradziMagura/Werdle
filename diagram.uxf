@@ -4,23 +4,25 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>870</x>
-      <y>400</y>
+      <x>810</x>
+      <y>380</y>
       <w>210</w>
       <h>120</h>
     </coordinates>
     <panel_attributes>_Wordle_
 --
-id: Long="36548"
-[waiting for message]
+-win
+-sessionCount: int
+
 --
-</panel_attributes>
+getSession()
+setSession()</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>490</x>
+      <x>430</x>
       <y>430</y>
       <w>210</w>
       <h>70</h>
@@ -35,51 +37,134 @@ id: Long="36548"
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>870</x>
-      <y>590</y>
+      <x>810</x>
+      <y>630</y>
       <w>210</w>
-      <h>70</h>
+      <h>130</h>
     </coordinates>
     <panel_attributes>_gameInstance_
 --
-id: Long="36548"
-[waiting for message]</panel_attributes>
+- guess: string 
+-score: int
+--
+sessionScore()
+getWord()
+getScore()
+play()
+</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>870</x>
-      <y>210</y>
+      <x>810</x>
+      <y>120</y>
       <w>210</w>
-      <h>70</h>
+      <h>150</h>
     </coordinates>
     <panel_attributes>_gameStats_
 --
-id: Long="36548"
+-gamesPlayed: int
+-winPercentage: double 
+-currentStreak: int
+-maxStreak: int
+-guessDistribution: set
+--
++updateStats()
++getStats: map()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>630</x>
+      <y>450</y>
+      <w>200</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+m1=1
+m2=1</panel_attributes>
+    <additional_attributes>180.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>900</x>
+      <y>260</y>
+      <w>40</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+m1=1
+m2=1
+</panel_attributes>
+    <additional_attributes>10.0;120.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>900</x>
+      <y>490</y>
+      <w>50</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+m1= 0..*
+m2= 1</panel_attributes>
+    <additional_attributes>10.0;140.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>470</x>
+      <y>670</y>
+      <w>210</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>_Guess_
+--
+checkWrod
 [waiting for message]</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>690</x>
-      <y>450</y>
-      <w>200</w>
-      <h>30</h>
+      <x>670</x>
+      <y>700</y>
+      <w>160</w>
+      <h>40</h>
     </coordinates>
-    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
-    <additional_attributes>180.0;10.0;10.0;10.0</additional_attributes>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+m1= 1
+m2= 1..6</panel_attributes>
+    <additional_attributes>140.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1120</x>
+      <y>670</y>
+      <w>210</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>_Dictionary_
+--
++ wordList: array
+--
+words[]</panel_attributes>
+    <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>960</x>
-      <y>270</y>
-      <w>30</w>
-      <h>150</h>
+      <x>1010</x>
+      <y>690</y>
+      <w>130</w>
+      <h>30</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;130.0;10.0;10.0</additional_attributes>
+    <additional_attributes>10.0;10.0;110.0;10.0</additional_attributes>
   </element>
 </diagram>
