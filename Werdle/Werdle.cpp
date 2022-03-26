@@ -7,10 +7,27 @@ using namespace std;
 
 int main()
 {
-    int selection = 0;
     view view;
+    int selection = 0;
+    while(true) {
+        view.Home();
+        cin >> selection;
+        // Play screen
+        if (selection == 1) {
+            cout << selection << endl;
+        }
+        // Statistics screen
+        else if (selection == 2) {
+            cout << selection << endl;
+        }
+        // Help screen
+        else if (selection == 3) {
+            view.Help();
+        }
+    }
+
     //view.Help();
-    view.Home();
+    
     //cin >> selection;
-    //cout << selection << endl;
+    
 }
