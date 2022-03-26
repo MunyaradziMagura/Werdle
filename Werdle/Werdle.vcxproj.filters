@@ -27,10 +27,10 @@
     <ClCompile Include="gameStats.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="guess.cpp">
+    <ClCompile Include="view.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="view.cpp">
+    <ClCompile Include="check.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -44,10 +44,10 @@
     <ClInclude Include="gameStats.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="guess.h">
+    <ClInclude Include="view.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="view.h">
+    <ClInclude Include="check.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

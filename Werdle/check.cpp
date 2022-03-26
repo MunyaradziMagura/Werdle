@@ -2,7 +2,7 @@
 #include <iostream>
 #include <string>
 using namespace std;
-string check::checkWord(string answer, string word)
+void check::checkWord(string answer, string word)
 {
 	Answer = answer;
 	Word = word;
@@ -34,8 +34,6 @@ map<bool, string> check::getCheckWord()
 		Checked.insert(make_pair(true, result));
 		return Checked;
 	}
-	
-	return map<bool, string>();
 }
 
 string check::correct(string guess)

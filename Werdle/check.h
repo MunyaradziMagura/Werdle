@@ -13,7 +13,7 @@ private:
     string closeSquare = "]";
     string bar = "|";
 public:
-    string checkWord(string answer, string word);
+    void checkWord(string answer, string word);
     map<bool, string> getCheckWord();
     string correct(string guess);
     void mapDelete();
