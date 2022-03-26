@@ -3,7 +3,6 @@ using namespace std;
 #include <cstdio>
 #include "Dictionary.h"
 #include "view.h"
-//#include "help.h"
 
 int main()
 {
@@ -25,9 +24,5 @@ int main()
             view.Help();
         }
     }
-
-    //view.Help();
-    
-    //cin >> selection;
     
 }
