@@ -142,12 +142,16 @@
     <ClCompile Include="Dictionary.cpp" />
     <ClCompile Include="gameInstance.cpp" />
     <ClCompile Include="gameStats.cpp" />
+    <ClCompile Include="guess.cpp" />
+    <ClCompile Include="view.cpp" />
     <ClCompile Include="Werdle.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Dictionary.h" />
     <ClInclude Include="gameInstance.h" />
     <ClInclude Include="gameStats.h" />
+    <ClInclude Include="guess.h" />
+    <ClInclude Include="view.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
