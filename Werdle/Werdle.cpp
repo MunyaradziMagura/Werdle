@@ -9,7 +9,8 @@ int main()
 {
     int selection = 0;
     view view;
-    view.Help();
+    //view.Help();
+    view.Home();
     //cin >> selection;
     //cout << selection << endl;
 }
