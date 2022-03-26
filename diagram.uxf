@@ -25,13 +25,15 @@ setSession()</panel_attributes>
       <x>430</x>
       <y>430</y>
       <w>210</w>
-      <h>70</h>
+      <h>100</h>
     </coordinates>
-    <panel_attributes>_Help_
+    <panel_attributes>_view_
 --
 -help: string
+-home: string
 --
-+getHelp()</panel_attributes>
++Help()
++Home()</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
