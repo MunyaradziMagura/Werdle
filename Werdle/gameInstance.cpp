@@ -1,6 +1,10 @@
 #include "gameInstance.h"
+#include <iostream>
+#include <string>
+using namespace std;
 int gameInstance::play(int sessionNumber)
 {
+	cout << "PLAYING" << endl;
 	return 0;
 }
 
