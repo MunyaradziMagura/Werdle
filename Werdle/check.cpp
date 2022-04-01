@@ -20,13 +20,13 @@ map<bool, string> check::getCheckWord()
 		string result = "";
 		for (int character = 0; character < Word.length(); character++) {
 			// loop through answer
-			for (int ans = 0; ans < Answer.length(); ans++) {
+			for (int ans = character; ans < Answer.length(); ans++) {
 				// if the char is in the right index 
 				if (character == ans && Word[character] == Answer[ans]) {
 					result += openSquare + Word[character] + closeSquare;
 				}
 				// the character is correct but not in the right place
-				else if (character != ans && Word[character] == Answer[ans]) {
+				else if (character + 1 != ans && Word[character] == Answer[ans]) {
 					result += bar + Word[character] + bar;
 				}
 			}
