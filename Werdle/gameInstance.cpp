@@ -4,7 +4,7 @@
 using namespace std;
 int gameInstance::play(int sessionNumber)
 {
-	cout << "PLAYING" << endl;
+	cout << "PLAYING: " << sessionNumber << endl;
 	return 0;
 }
 
