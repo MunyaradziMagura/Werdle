@@ -52,7 +52,7 @@ setSession()</panel_attributes>
 sessionScore()
 getWord()
 getScore()
-play()
+play(int sessionNumber)
 </panel_attributes>
     <additional_attributes/>
   </element>
