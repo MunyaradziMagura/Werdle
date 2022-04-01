@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="14.3.0">
-  <zoom_level>10</zoom_level>
+  <zoom_level>13</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>810</x>
-      <y>380</y>
-      <w>210</w>
-      <h>120</h>
+      <x>611</x>
+      <y>403</y>
+      <w>273</w>
+      <h>182</h>
     </coordinates>
     <panel_attributes>_Wordle_
 --
@@ -15,17 +15,18 @@
 -sessionCount: int
 
 --
-getSession()
-setSession()</panel_attributes>
++getSession()
++play()
++setStats()</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>430</x>
-      <y>430</y>
-      <w>210</w>
-      <h>100</h>
+      <x>117</x>
+      <y>468</y>
+      <w>273</w>
+      <h>130</h>
     </coordinates>
     <panel_attributes>_view_
 --
@@ -39,30 +40,30 @@ setSession()</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>810</x>
-      <y>630</y>
-      <w>210</w>
-      <h>130</h>
+      <x>611</x>
+      <y>728</y>
+      <w>273</w>
+      <h>169</h>
     </coordinates>
     <panel_attributes>_gameInstance_
 --
 - guess: string 
 -score: int
 --
-sessionScore()
-getWord()
-getScore()
-play(int sessionNumber)
++sessionScore()
++getWord()
++getScore()
++play(int sessionNumber)
 </panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>810</x>
-      <y>120</y>
-      <w>210</w>
-      <h>150</h>
+      <x>611</x>
+      <y>65</y>
+      <w>273</w>
+      <h>221</h>
     </coordinates>
     <panel_attributes>_gameStats_
 --
@@ -73,16 +74,17 @@ play(int sessionNumber)
 -guessDistribution: set
 --
 +updateStats()
-+getStats: map()</panel_attributes>
++getStats: map()
++ virtual setStats() = 0</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>630</x>
-      <y>450</y>
-      <w>200</w>
-      <h>40</h>
+      <x>377</x>
+      <y>494</y>
+      <w>260</w>
+      <h>52</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-
 m1=1
@@ -92,37 +94,37 @@ m2=1</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>900</x>
-      <y>260</y>
-      <w>40</w>
-      <h>140</h>
+      <x>728</x>
+      <y>273</y>
+      <w>52</w>
+      <h>156</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-
 m1=1
 m2=1
 </panel_attributes>
-    <additional_attributes>10.0;120.0;10.0;10.0</additional_attributes>
+    <additional_attributes>10.0;100.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>900</x>
-      <y>490</y>
-      <w>50</w>
-      <h>160</h>
+      <x>728</x>
+      <y>572</y>
+      <w>65</w>
+      <h>182</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-
 m1= 0..*
 m2= 1</panel_attributes>
-    <additional_attributes>10.0;140.0;10.0;10.0</additional_attributes>
+    <additional_attributes>10.0;120.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>470</x>
-      <y>670</y>
-      <w>210</w>
-      <h>70</h>
+      <x>169</x>
+      <y>780</y>
+      <w>273</w>
+      <h>91</h>
     </coordinates>
     <panel_attributes>_Guess_
 --
@@ -133,10 +135,10 @@ checkWord(guess, word)
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>670</x>
-      <y>700</y>
-      <w>160</w>
-      <h>40</h>
+      <x>429</x>
+      <y>819</y>
+      <w>208</w>
+      <h>52</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
 m1= 1
@@ -146,10 +148,10 @@ m2= 1..6</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1120</x>
-      <y>670</y>
-      <w>210</w>
-      <h>70</h>
+      <x>1287</x>
+      <y>780</y>
+      <w>273</w>
+      <h>91</h>
     </coordinates>
     <panel_attributes>_Dictionary_
 --
@@ -161,12 +163,12 @@ words[]</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1010</x>
-      <y>690</y>
-      <w>130</w>
-      <h>30</h>
+      <x>871</x>
+      <y>806</y>
+      <w>442</w>
+      <h>39</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;110.0;10.0</additional_attributes>
+    <additional_attributes>10.0;10.0;320.0;10.0</additional_attributes>
   </element>
 </diagram>

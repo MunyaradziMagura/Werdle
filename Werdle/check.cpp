@@ -18,6 +18,7 @@ map<bool, string> check::getCheckWord()
 	}
 	else {
 		string result = "";
+		//replace for loop with std::for_each()
 		for (int character = 0; character < Word.length(); character++) {
 			// loop through answer
 			for (int ans = character; ans < Answer.length(); ans++) {
