@@ -5,7 +5,7 @@
     <id>UMLClass</id>
     <coordinates>
       <x>611</x>
-      <y>403</y>
+      <y>169</y>
       <w>273</w>
       <h>182</h>
     </coordinates>
@@ -24,7 +24,7 @@
     <id>UMLClass</id>
     <coordinates>
       <x>117</x>
-      <y>468</y>
+      <y>234</y>
       <w>273</w>
       <h>130</h>
     </coordinates>
@@ -41,7 +41,7 @@
     <id>UMLClass</id>
     <coordinates>
       <x>611</x>
-      <y>728</y>
+      <y>494</y>
       <w>273</w>
       <h>169</h>
     </coordinates>
@@ -60,8 +60,8 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>611</x>
-      <y>65</y>
+      <x>1404</x>
+      <y>286</y>
       <w>273</w>
       <h>221</h>
     </coordinates>
@@ -82,7 +82,7 @@
     <id>Relation</id>
     <coordinates>
       <x>377</x>
-      <y>494</y>
+      <y>260</y>
       <w>260</w>
       <h>52</h>
     </coordinates>
@@ -95,21 +95,7 @@ m2=1</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>728</x>
-      <y>273</y>
-      <w>52</w>
-      <h>156</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
-m1=1
-m2=1
-</panel_attributes>
-    <additional_attributes>10.0;100.0;10.0;10.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>728</x>
-      <y>572</y>
+      <y>338</y>
       <w>65</w>
       <h>182</h>
     </coordinates>
@@ -122,7 +108,7 @@ m2= 1</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>169</x>
-      <y>780</y>
+      <y>546</y>
       <w>273</w>
       <h>91</h>
     </coordinates>
@@ -136,7 +122,7 @@ checkWord(guess, word)
     <id>Relation</id>
     <coordinates>
       <x>429</x>
-      <y>819</y>
+      <y>585</y>
       <w>208</w>
       <h>52</h>
     </coordinates>
@@ -148,8 +134,8 @@ m2= 1..6</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1287</x>
-      <y>780</y>
+      <x>1404</x>
+      <y>546</y>
       <w>273</w>
       <h>91</h>
     </coordinates>
@@ -161,14 +147,46 @@ words[]</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>936</x>
+      <y>507</y>
+      <w>273</w>
+      <h>143</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;interface&gt;&gt;
+Search
+--
+- item
+--
++getSearch()
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
     <id>Relation</id>
     <coordinates>
-      <x>871</x>
-      <y>806</y>
-      <w>442</w>
-      <h>39</h>
+      <x>1196</x>
+      <y>572</y>
+      <w>234</w>
+      <h>65</h>
     </coordinates>
-    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;320.0;10.0</additional_attributes>
+    <panel_attributes>lt=-
+
+&lt; sends word </panel_attributes>
+    <additional_attributes>10.0;20.0;160.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1196</x>
+      <y>442</y>
+      <w>364</w>
+      <h>143</h>
+    </coordinates>
+    <panel_attributes>lt=-
+
+&lt; sends game stats</panel_attributes>
+    <additional_attributes>10.0;90.0;140.0;90.0;140.0;10.0;160.0;10.0</additional_attributes>
   </element>
 </diagram>
