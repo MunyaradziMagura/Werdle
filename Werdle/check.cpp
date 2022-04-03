@@ -16,7 +16,6 @@ string check::getCheckWord()
 		return correct(Word);
 	}
 	else {
-		string result = "";
 		//replace for loop with std::for_each()
 		for (int character = 0; character < Word.length(); character++) {
 			// loop through answer

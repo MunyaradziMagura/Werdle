@@ -7,6 +7,7 @@ class gameInstance
 private:
 	map<int, int> gameDetails;
 	string dictionary_word;
+	string game_guess;
 public:
 	// play game
 	int play(int sessionNumber);
@@ -14,5 +15,6 @@ public:
 	string getWord(int index);
 	// delete gameDetails map
 	void deleteGameDetails();
+	string getGuess();
 };
 

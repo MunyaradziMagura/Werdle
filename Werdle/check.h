@@ -14,6 +14,7 @@ private:
     string bar = "|";
     string correct(string guess);
     bool insertion = false;
+    string result = "";
 public:
     void checkWord(string answer, string word);
     string getCheckWord();
