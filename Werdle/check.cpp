@@ -8,13 +8,12 @@ void check::checkWord(string answer, string word)
 	Word = word;
 }
 
-map<bool, string> check::getCheckWord()
+string check::getCheckWord()
 {	
 
 	// if the word is a match
 	if (Answer == Word) {
-		Checked.insert(make_pair(true, correct(Word)));
-		return Checked;
+		return correct(Word);
 	}
 	else {
 		string result = "";
@@ -25,15 +24,21 @@ map<bool, string> check::getCheckWord()
 				// if the char is in the right index 
 				if (character == ans && Word[character] == Answer[ans]) {
 					result += openSquare + Word[character] + closeSquare;
+					insertion = true;
 				}
 				// the character is correct but not in the right place
 				else if (character + 1 != ans && Word[character] == Answer[ans]) {
 					result += bar + Word[character] + bar;
+					insertion = true;
 				}
 			}
+			if (insertion == false) {
+				result += Word[character];
+			}
+			insertion = false;
+			
 		}
-		Checked.insert(make_pair(true, result));
-		return Checked;
+		return result;
 	}
 }
 

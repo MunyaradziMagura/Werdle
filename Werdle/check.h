@@ -6,16 +6,17 @@ using namespace std;
 class check
 {
 private:
-    map<bool, string> Checked;
+    map<string, string> Checked;
     string Answer;
     string Word;
     string openSquare = "[";
     string closeSquare = "]";
     string bar = "|";
+    string correct(string guess);
+    bool insertion = false;
 public:
     void checkWord(string answer, string word);
-    map<bool, string> getCheckWord();
-    string correct(string guess);
+    string getCheckWord();
     void mapDelete();
 };
 

@@ -6,6 +6,7 @@ class gameInstance
 {
 private:
 	map<int, int> gameDetails;
+	string dictionary_word;
 public:
 	// play game
 	int play(int sessionNumber);
