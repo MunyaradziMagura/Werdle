@@ -5,14 +5,12 @@ using namespace std;
 class gameInstance
 {
 private:
-	map<int, int> gameDetails;
+	map<string, int> gameDetails;
 	string dictionary_word;
 	string game_guess;
 public:
 	// play game
-	int play(int sessionNumber);
-	// get word from dictionary
-	string getWord(int index);
+	map<string, int> play(int sessionNumber);
 	// delete gameDetails map
 	void deleteGameDetails();
 	string getGuess();

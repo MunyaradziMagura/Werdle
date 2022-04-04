@@ -18,6 +18,6 @@ private:
 public:
     void checkWord(string answer, string word);
     string getCheckWord();
-    void mapDelete();
+    void wordDelete();
 };
 

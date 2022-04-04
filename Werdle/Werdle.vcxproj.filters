@@ -50,5 +50,8 @@
     <ClInclude Include="check.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Werdle.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

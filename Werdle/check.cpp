@@ -51,7 +51,7 @@ string check::correct(string guess)
 	return result;
 }
 
-void check::mapDelete()
+void check::wordDelete()
 {
-	Checked.clear();
+	result = "";
 }

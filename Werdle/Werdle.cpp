@@ -3,34 +3,38 @@ using namespace std;
 #include <cstdio>
 #include "view.h"
 #include "gameInstance.h"
+#include "gameStats.h"
+#include "Werdle.h"
 int main()
-
 {
     
     view view;
-    gameInstance play;
+    gameInstance gameInstance;
+    Werdle werdle;
     
-    int selection = 0;
-    int session = 0;
     while(true) {
         view.Home();
-        cin >> selection;
+        cin >> werdle.selection;
         // Play screen
-        if (selection == 1) {
-            play.play(session);
+        if (werdle.selection == 1) {
+            // begin game 
+            gameInstance.play(werdle.session);
+
+            // 
+
+
+
             // increase session
-            session++;
+            werdle.session++;
             
         }
         // Statistics screen
-        else if (selection == 2) {
-            cout << selection << endl;
+        else if (werdle.selection == 2) {
+            cout << werdle.selection << endl;
         }
         // Help screen
-        else if (selection == 3) {
+        else if (werdle.selection == 3) {
             view.Help();
         }
-
-    }
-    
+    }  
 }

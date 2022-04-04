@@ -41,3 +41,8 @@ const std::string Dictionary::words[] = {
 	"boost",
 	"right"
 };
+
+std::string Dictionary::getWord(int index)
+{
+	return words[index];
+}
