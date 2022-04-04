@@ -18,10 +18,15 @@ int main()
         // Play screen
         if (werdle.selection == 1) {
             // begin game 
-            gameInstance.play(werdle.session);
+            werdle.gamestats = gameInstance.play(werdle.session);
+            
+            // print contents of game stats 
+            for (auto elem : werdle.gamestats)
+            {
+                std::cout << elem.first << " " << elem.second << "\n";
+            }
 
-            // 
-
+            // update game stats
 
 
             // increase session

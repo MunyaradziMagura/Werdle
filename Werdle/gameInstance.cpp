@@ -58,6 +58,7 @@ map<string, int> gameInstance::play(int sessionNumber)
 			cout << "Enter a valid word length..." << endl;	
 		}
 		game_guess = getGuess();
+		// clear previous search
 		game.wordDelete();
 	}
 	return gameDetails;

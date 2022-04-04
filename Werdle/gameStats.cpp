@@ -1,5 +1,5 @@
 #include "gameStats.h"
-
+#include <string>
 string gameStats::getGameStats()
 {
 	return string();
@@ -9,18 +9,31 @@ void gameStats::setPlayed(int played)
 {
 }
 
-void gameStats::setWin(int win)
+void gameStats::winPercentage(int wins)
 {
+	win += wins;
+	// calculate win percentage
+	winPercent = (played / win) * 100;
 }
 
-void gameStats::setCurrentStreak(int currentStreak)
+void gameStats::setStreak(bool going)
 {
+	if (going == true) {
+		currentStreak += 1;
+	}
+	else {
+		// update current streak
+		if (maxStreak < currentStreak) {
+			maxStreak = currentStreak;
+		}
+		currentStreak = 0;
+	}
 }
 
-void gameStats::setMaxStreak(int maxStreak)
+void gameStats::setGuessDistribution(map<string, int> guessDistributionMap)
 {
-}
-
-void gameStats::setGuessDistribution(map<string, int> guessDistribution)
-{
+	for (auto distribution : guessDistributionMap)
+	{
+		guessDistribution[distribution.first] += distribution.second;
+	}
 }
