@@ -20,7 +20,7 @@ private:
 	};
 public:
 	virtual string getGameStats();
-	 void setPlayed(int played);
+	 void setPlayed(int game);
 	 void winPercentage(int wins);
 	 void setStreak(bool going);
 	 void setGuessDistribution(map<string, int> guessDistributionMap);

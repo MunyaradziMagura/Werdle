@@ -11,7 +11,7 @@ int main()
     view view;
     gameInstance gameInstance;
     Werdle werdle;
-    
+    gameStats gameStats;
     while(true) {
         view.Home();
         cin >> werdle.selection;
@@ -19,23 +19,24 @@ int main()
         if (werdle.selection == 1) {
             // begin game 
             werdle.gamestats = gameInstance.play(werdle.session);
-            
-            // print contents of game stats 
-            for (auto elem : werdle.gamestats)
-            {
-                std::cout << elem.first << " " << elem.second << "\n";
+
+            // the game has been lost
+            if (werdle.gamestats.empty()) {
+                gameStats.setStreak(false);
+                gameStats.winPercentage(0);
+            } else {
+                // the game has been won
+
             }
 
-            // update game stats
-
-
+            gameStats.setPlayed(1);
             // increase session
             werdle.session++;
             
         }
         // Statistics screen
         else if (werdle.selection == 2) {
-            cout << werdle.selection << endl;
+            cout << gameStats.getGameStats() << endl;
         }
         // Help screen
         else if (werdle.selection == 3) {

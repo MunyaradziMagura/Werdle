@@ -21,9 +21,6 @@ map<string, int> gameInstance::play(int sessionNumber)
 			game.checkWord(dictionary_word, game_guess);
 			cout << game.getCheckWord() << endl;
 			if (game_guess == dictionary_word) {
-				
-				// update game map
-				gameDetails.insert({ "win", 1 });
 				// what text should outputted 
 				switch (itr) {
 				case 0:
