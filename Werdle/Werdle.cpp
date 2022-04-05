@@ -26,7 +26,9 @@ int main()
                 gameStats.winPercentage(0);
             } else {
                 // the game has been won
-
+                gameStats.setGuessDistribution(werdle.gamestats);
+                gameStats.setStreak(true);
+                gameStats.winPercentage(1);
             }
 
             gameStats.setPlayed(1);

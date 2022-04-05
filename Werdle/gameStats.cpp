@@ -13,7 +13,7 @@ void gameStats::setPlayed(int game)
 
 void gameStats::winPercentage(int wins)
 {
-	win += wins;
+	win += 1;
 	// calculate win percentage
 	winPercent = (played / win) * 100;
 }

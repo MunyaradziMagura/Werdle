@@ -7,6 +7,7 @@ class check
 {
 private:
     map<string, string> Checked;
+    map<char, int> answer_frequency;
     string Answer;
     string Word;
     string openSquare = "[";
@@ -19,5 +20,6 @@ public:
     void checkWord(string answer, string word);
     string getCheckWord();
     void wordDelete();
+    void frequency(string word);
 };
 

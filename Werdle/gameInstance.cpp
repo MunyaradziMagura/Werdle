@@ -22,29 +22,24 @@ map<string, int> gameInstance::play(int sessionNumber)
 			cout << game.getCheckWord() << endl;
 			if (game_guess == dictionary_word) {
 				// what text should outputted 
+				gameDetails.insert({to_string(itr), 1 });
 				switch (itr) {
 				case 0:
-					gameDetails.insert({ "1", 1 });
 					cout << "Impossible!" << endl;
 					break;
 				case 1:
-					gameDetails.insert({ "2", 1 });
 					cout << "Amazing!" << endl;
 					break;
 				case 2:
-					gameDetails.insert({ "3", 1 });
 					cout << "Outstanding!" << endl;
 					break;
 				case 3:
-					gameDetails.insert({ "4", 1 });
 					cout << "Great!" << endl;
 					break;
 				case 4:
-					gameDetails.insert({ "5", 1 });
 					cout << "Nice one!" << endl;
 					break;
 				default:
-					gameDetails.insert({ "6", 1 });
 					cout << "You got there!" << endl;
 					break;
 				}
