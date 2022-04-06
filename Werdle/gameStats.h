@@ -5,11 +5,11 @@ using namespace std;
 class gameStats
 {
 private:
-	int played;
-	int win;
-	int winPercent;
-	int currentStreak;
-	int maxStreak;
+	int played = 0;
+	int win = 0;
+	int winPercent = 0;
+	int currentStreak = 0;
+	int maxStreak = 0;
 	map<string, int> guessDistribution{
 			{"1", 0},
 			{"2", 0},
@@ -20,8 +20,8 @@ private:
 	};
 public:
 	virtual string getGameStats();
-	 void setPlayed(int game);
-	 void winPercentage(int wins);
+	 void setPlayed();
+	 void winCounter();
 	 void setStreak(bool going);
 	 void setGuessDistribution(map<string, int> guessDistributionMap);
 };

@@ -3,30 +3,31 @@
 #include <iostream>
 string gameStats::getGameStats()
 {
+	
 	return "\nPlayed: " + to_string(played) + " Win%: " + to_string(winPercent) + "  Current streak: "+ to_string(currentStreak)+ " Max streak: " + to_string(maxStreak) +"\n \nGUESS DISTRIBUTION\n"+"\n1: " + to_string(guessDistribution["1"]) + "\n2: " + to_string(guessDistribution["2"]) + "\n3: " + to_string(guessDistribution["3"]) + "\n4: " + to_string(guessDistribution["4"]) + "\n5: " + to_string(guessDistribution["5"]) + "\n6: " + to_string(guessDistribution["6"]);
 }
 
-void gameStats::setPlayed(int game)
+void gameStats::setPlayed()
 {
-	played += game;
+	played = played + 1;
+	winPercent = 100 * win / played;
 }
 
-void gameStats::winPercentage(int wins)
+void gameStats::winCounter()
 {
-	win += 1;
-	// calculate win percentage
-	winPercent = 100 * (played / win);
+	win = win + 1;
 }
 
 void gameStats::setStreak(bool going)
 {
 	if (going == true) {
-		currentStreak += 1;
+		currentStreak = currentStreak + 1;
 	}
 	else {
 		// update current streak
 		if (maxStreak < currentStreak) {
 			maxStreak = currentStreak;
+			currentStreak = 0;
 		}
 		currentStreak = 0;
 	}

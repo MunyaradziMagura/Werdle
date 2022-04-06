@@ -23,9 +23,18 @@ int main()
             for (auto const& pair : werdle.gamestats) {
                 std::cout << "{" << pair.first << ": " << pair.second << "}\n";
             }
-
-
-            gameStats.setPlayed(1);
+            // game was lost
+            if (werdle.gamestats.empty()) {
+                gameStats.setStreak(false);
+            }
+            else {
+                gameStats.setStreak(true);
+                gameStats.winCounter();
+            }
+            // set guess distribution 
+            gameStats.setGuessDistribution(werdle.gamestats);
+            // update games played
+            gameStats.setPlayed();
             // increase session
             werdle.session++;
             gameInstance.deleteGameDetails();

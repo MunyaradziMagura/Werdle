@@ -24,27 +24,27 @@ map<string, int> gameInstance::play(int sessionNumber)
 				// what text should outputted 
 				switch (itr) {
 				case 0:
-					gameDetails.insert({ to_string(itr), 1 });
+					gameDetails.insert({ to_string(itr + 1), 1 });
 					cout << "Impossible!" << endl;
 					break;
 				case 1:
-					gameDetails.insert({ to_string(itr), 1 });
+					gameDetails.insert({ to_string(itr + 1), 1 });
 					cout << "Amazing!" << endl;
 					break;
 				case 2:
-					gameDetails.insert({ to_string(itr), 1 });
+					gameDetails.insert({ to_string(itr + 1), 1 });
 					cout << "Outstanding!" << endl;
 					break;
 				case 3:
-					gameDetails.insert({ to_string(itr), 1 });
+					gameDetails.insert({ to_string(itr + 1), 1 });
 					cout << "Great!" << endl;
 					break;
 				case 4:
-					gameDetails.insert({ to_string(itr), 1 });
+					gameDetails.insert({ to_string(itr + 1), 1 });
 					cout << "Nice one!" << endl;
 					break;
 				default:
-					gameDetails.insert({ to_string(itr), 1 });
+					gameDetails.insert({ to_string(itr + 1), 1 });
 					cout << "You got there!" << endl;
 					break;
 				}
