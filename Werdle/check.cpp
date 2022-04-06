@@ -33,7 +33,7 @@ string check::getCheckWord()
 						result += openSquare + Word[character] + closeSquare;
 						answer_frequency.find(Word.at(character))->second = answer_frequency.find(Word.at(character))->second - 1;
 					}
-					else {
+					else if(Word.at(character) != Answer.at(character)) {
 						result += bar + Word[character] + bar;
 						answer_frequency.find(Word.at(character))->second = answer_frequency.find(Word.at(character))->second - 1;
 					}

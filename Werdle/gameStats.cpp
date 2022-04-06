@@ -20,15 +20,15 @@ void gameStats::winCounter()
 
 void gameStats::setStreak(bool going)
 {
+	// update current streak
+	if (maxStreak < currentStreak) {
+		maxStreak = currentStreak;
+	}
+	
 	if (going == true) {
 		currentStreak = currentStreak + 1;
 	}
 	else {
-		// update current streak
-		if (maxStreak < currentStreak) {
-			maxStreak = currentStreak;
-			currentStreak = 0;
-		}
 		currentStreak = 0;
 	}
 }
