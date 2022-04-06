@@ -14,11 +14,11 @@ private:
     string closeSquare = "]";
     string bar = "|";
     string correct(string guess);
+    void frequency(string word);
     string result = "";
 public:
     void checkWord(string answer, string word);
     string getCheckWord();
     void wordDelete();
-    void frequency(string word);
 };
 

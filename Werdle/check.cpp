@@ -47,6 +47,11 @@ string check::getCheckWord()
 	}
 }
 
+void check::wordDelete()
+{
+	result = "";
+}
+
 string check::correct(string guess)
 {
 	string result = "";
@@ -55,11 +60,6 @@ string check::correct(string guess)
 		result += openSquare + guess[character] + closeSquare;
 	}
 	return result;
-}
-
-void check::wordDelete()
-{
-	result = "";
 }
 
 void check::frequency(string word)

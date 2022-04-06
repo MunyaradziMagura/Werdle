@@ -20,20 +20,15 @@ int main()
             // begin game 
             werdle.gamestats = gameInstance.play(werdle.session);
 
-            // the game has been lost
-            if (werdle.gamestats.empty()) {
-                gameStats.setStreak(false);
-                gameStats.winPercentage(0);
-            } else {
-                // the game has been won
-                gameStats.setGuessDistribution(werdle.gamestats);
-                gameStats.setStreak(true);
-                gameStats.winPercentage(1);
+            for (auto const& pair : werdle.gamestats) {
+                std::cout << "{" << pair.first << ": " << pair.second << "}\n";
             }
+
 
             gameStats.setPlayed(1);
             // increase session
             werdle.session++;
+            gameInstance.deleteGameDetails();
             
         }
         // Statistics screen

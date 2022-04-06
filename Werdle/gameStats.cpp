@@ -15,7 +15,7 @@ void gameStats::winPercentage(int wins)
 {
 	win += 1;
 	// calculate win percentage
-	winPercent = (played / win) * 100;
+	winPercent = 100 * (played / win);
 }
 
 void gameStats::setStreak(bool going)

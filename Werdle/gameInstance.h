@@ -8,6 +8,7 @@ private:
 	map<string, int> gameDetails;
 	string dictionary_word;
 	string game_guess;
+	int endState;
 public:
 	// play game
 	map<string, int> play(int sessionNumber);
