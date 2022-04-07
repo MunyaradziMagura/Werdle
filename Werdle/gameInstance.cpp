@@ -91,6 +91,8 @@ string gameInstance::getGuess()
 
 void gameInstance::previousWords()
 {
+	
+	
 	for (vector<string>::iterator it = previousGuesses.begin(); it != previousGuesses.end(); it++)
 	{
 		cout << *it << "\n";

@@ -3,8 +3,18 @@
 #include <iostream>
 string gameStats::getGameStats()
 {
-	
-	return "\nPlayed: " + to_string(played) + " Win%: " + to_string(winPercent) + "  Current streak: "+ to_string(currentStreak)+ " Max streak: " + to_string(maxStreak) +"\n \nGUESS DISTRIBUTION\n"+"\n1: " + to_string(guessDistribution["1"]) + "\n2: " + to_string(guessDistribution["2"]) + "\n3: " + to_string(guessDistribution["3"]) + "\n4: " + to_string(guessDistribution["4"]) + "\n5: " + to_string(guessDistribution["5"]) + "\n6: " + to_string(guessDistribution["6"]);
+	// return game stats formated correctly 
+	return "\nPlayed: " + to_string(played) 
+		+ " Win%: " + to_string(winPercent) 
+		+ "  Current streak: " + to_string(currentStreak) 
+		+ " Max streak: " + to_string(maxStreak) 
+		+"\n \nGUESS DISTRIBUTION\n"
+		+"\n1: " + to_string(guessDistribution["1"]) 
+		+ "\n2: " + to_string(guessDistribution["2"]) 
+		+ "\n3: " + to_string(guessDistribution["3"]) 
+		+ "\n4: " + to_string(guessDistribution["4"]) 
+		+ "\n5: " + to_string(guessDistribution["5"]) 
+		+ "\n6: " + to_string(guessDistribution["6"]);
 }
 
 void gameStats::setPlayed()

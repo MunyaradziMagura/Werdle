@@ -47,7 +47,9 @@ void check::findCorrect()
 			answer_frequency.find(Answer.at(character))->second--;
 		}
 		else {
-			guessResults.at(character) = ' ' + Word[character] + ' ';
+			guessResults.at(character) += ' ';
+			guessResults.at(character) += Word.at(character);
+			guessResults.at(character) += ' ';
 		}
 	}
 }
@@ -79,9 +81,10 @@ void check::returnString()
 
 string check::correct(string guess)
 {
-	std::for_each(guess.begin(), guess.end(), [&](char letter) {
-		result += openSquare + letter + closeSquare;
+	std::for_each(guess.begin(), guess.end(), [&](char character) {
+		result += openSquare + character + closeSquare; 
 		});
+
 	return result;
 }
 
