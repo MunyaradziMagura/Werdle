@@ -81,11 +81,9 @@ void check::returnString()
 
 string check::correct(string guess)
 {
-	
-	for (int character = 0; character < guess.length(); character++) {
-		// add [ ] for each character
-		result += openSquare + guess[character] + closeSquare;
-	}
+	std::for_each(guess.begin(), guess.end(), [&](char letter) {
+		result += openSquare + letter + closeSquare;
+		});
 	return result;
 }
 
