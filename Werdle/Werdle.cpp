@@ -19,10 +19,6 @@ int main()
         if (werdle.selection == 1) {
             // begin game 
             werdle.gamestats = gameInstance.play(werdle.session);
-
-            for (auto const& pair : werdle.gamestats) {
-                std::cout << "{" << pair.first << ": " << pair.second << "}\n";
-            }
             // game was lost
             if (werdle.gamestats.empty()) {
                 gameStats.setStreak(false);

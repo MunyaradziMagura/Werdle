@@ -1,24 +1,30 @@
 #pragma once
 #include <string>
 #include <map>
+#include <vector>
 using namespace std;
 
 class check
 {
 private:
-    map<string, string> Checked;
+    vector<string> guessResults = {"","","","",""};
+    vector<bool> guessCorrect = { true, true, true, true, true };
     map<char, int> answer_frequency;
     string Answer;
     string Word;
     string openSquare = "[";
     string closeSquare = "]";
     string bar = "|";
-    string correct(string guess);
-    void frequency(string word);
     string result = "";
+    string correct(string guess);
+    
+    void findCorrect();
+    void findIncorrect();
+    void returnString();
 public:
     void checkWord(string answer, string word);
-    string getCheckWord();
     void wordDelete();
+    string getCheckWord();
+    void frequency();
 };
 

@@ -11,6 +11,10 @@ void gameStats::setPlayed()
 {
 	played = played + 1;
 	winPercent = 100 * win / played;
+	// update current streak
+	if (maxStreak < currentStreak) {
+		maxStreak = currentStreak;
+	}
 }
 
 void gameStats::winCounter()
@@ -20,10 +24,6 @@ void gameStats::winCounter()
 
 void gameStats::setStreak(bool going)
 {
-	// update current streak
-	if (maxStreak < currentStreak) {
-		maxStreak = currentStreak;
-	}
 	
 	if (going == true) {
 		currentStreak = currentStreak + 1;

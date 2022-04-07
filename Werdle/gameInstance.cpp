@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <memory>
+#include <algorithm> 
 #include "gameInstance.h"
 #include "check.h"
 #include "Dictionary.h"
@@ -12,14 +13,15 @@ map<string, int> gameInstance::play(int sessionNumber)
 	check game;
 	Dictionary dictionary;
 	dictionary_word = dictionary.getWord(sessionNumber);
-	cout << "PLAYING: " << sessionNumber << "|| Word: " << dictionary.getWord(sessionNumber) << endl;
+	//cout << "PLAYING: " << sessionNumber << " || Word: " << dictionary.getWord(sessionNumber) << endl;
 	game_guess = getGuess();
 	for (auto itr = 0; itr < 6; itr++) {
-		cout << itr << endl;
 		// make sure the guess is less than 6 characters 
 		if (game_guess.size() == 5) {
 			game.checkWord(dictionary_word, game_guess);
-			cout << game.getCheckWord() << endl;
+			previousGuesses.push_back(game.getCheckWord());
+			previousWords();
+
 			if (game_guess == dictionary_word) {
 				// what text should outputted 
 				switch (itr) {
@@ -54,8 +56,7 @@ map<string, int> gameInstance::play(int sessionNumber)
 			itr -= 1;
 			cout << "Enter a valid word length..." << endl;	
 		}
-		
-
+		game.wordDelete();
 		game_guess = getGuess();
 		// clear previous game result
 		game.wordDelete();
@@ -65,13 +66,22 @@ map<string, int> gameInstance::play(int sessionNumber)
 
 void gameInstance::deleteGameDetails()
 {
+	previousGuesses = {};
 	gameDetails.clear();
 }
 
 string gameInstance::getGuess()
 {
-	string myGuess;
 	std::cout << "guess >";
 	cin >> myGuess;
+	std::transform(game_guess.begin(), game_guess.end(), game_guess.begin(), ::tolower);
 	return myGuess;
+}
+
+void gameInstance::previousWords()
+{
+	for (vector<string>::iterator it = previousGuesses.begin(); it != previousGuesses.end(); it++)
+	{
+		cout << *it << "\n";
+	}
 }
