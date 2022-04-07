@@ -60,7 +60,6 @@ map<string, int> gameInstance::play(int sessionNumber)
 			previousWords();
 			game.wordDelete();
 			game_guess = getGuess();
-
 			// clear previous game result
 			game.wordDelete();
 		} else {
