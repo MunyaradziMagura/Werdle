@@ -3,6 +3,7 @@
 #include <string>
 #include <map>
 #include <unordered_set>
+#include <algorithm>
 using namespace std;
 void check::checkWord(string answer, string word)
 {
@@ -91,20 +92,20 @@ string check::correct(string guess)
 void check::frequency()
 {
 	// remove duplicates 
-	std::unordered_set<char> exists;
-
-	for (const auto& letter : Answer) {
+	std::for_each(Answer.begin(), Answer.end(), [&](char letter) {
+		std::unordered_set<char> exists;
 		if (exists.insert(letter).second) tempWord += letter;
-	}
+	});
+	
 	// add characters to map
-	for (int i = 0; i < tempWord.length(); i++) {
-		answer_frequency.insert(pair<char, int>(tempWord[i], 0));
-	}
+	std::for_each(tempWord.begin(), tempWord.end(), [&](char letter) {
+		answer_frequency.insert(pair<char, int>(letter, 0));
+		});
 
 	// add character count
-	for (int characters = 0; characters < Answer.length(); characters++) {
-		answer_frequency[Answer.at(characters)]++;
-	}
+	std::for_each(Answer.begin(), Answer.end(), [&](char letter) {
+		answer_frequency[letter]++;
+		});
 
 }
 
