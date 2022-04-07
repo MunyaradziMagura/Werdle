@@ -14,6 +14,7 @@ int main()
     gameStats gameStats;
     while(true) {
         view.Home();
+        cout << ">";
         cin >> werdle.selection;
         // Play screen
         if (werdle.selection == 1) {

@@ -20,9 +20,9 @@ map<string, int> gameInstance::play(int sessionNumber)
 		if (game_guess.size() == 5) {
 			game.checkWord(dictionary_word, game_guess);
 			previousGuesses.push_back(game.getCheckWord());
-			previousWords();
-
+			
 			if (game_guess == dictionary_word) {
+				previousWords();
 				// what text should outputted 
 				switch (itr) {
 				case 0:
@@ -56,10 +56,22 @@ map<string, int> gameInstance::play(int sessionNumber)
 			itr -= 1;
 			cout << "Enter a valid word length..." << endl;	
 		}
-		game.wordDelete();
-		game_guess = getGuess();
-		// clear previous game result
-		game.wordDelete();
+		if (itr < 5 ) {
+			previousWords();
+			game.wordDelete();
+			game_guess = getGuess();
+
+			// clear previous game result
+			game.wordDelete();
+		} else {
+			break;
+		}
+
+	}
+	if (gameDetails.empty()) {
+		previousWords();
+		cout << "\nCorrect answer: " << dictionary_word << "\n";
+
 	}
 	return gameDetails;
 }

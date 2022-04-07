@@ -16,6 +16,7 @@ private:
     string closeSquare = "]";
     string bar = "|";
     string result = "";
+    string tempWord = "";
     string correct(string guess);
     
     void findCorrect();

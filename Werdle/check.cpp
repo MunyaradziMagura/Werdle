@@ -34,14 +34,11 @@ void check::wordDelete()
 	guessCorrect = { true, true, true, true, true };
 	guessResults = { "","","","","" };
 	answer_frequency = {};
+	tempWord = "";
 }
 
 void check::findCorrect()
 {
-	for (auto const& pair : answer_frequency) {
-		std::cout << "{" << pair.first << ": " << pair.second << "}\n";
-	}
-
 	for (auto character = 0; character < Word.length(); character++) {
 		if (Word.at(character) == Answer.at(character)) {
 			guessResults.at(character) = openSquare + Word[character] + closeSquare;
@@ -53,10 +50,6 @@ void check::findCorrect()
 			guessResults.at(character) += Word.at(character);
 			guessResults.at(character) += ' ';
 		}
-	}
-	cout << "WOWOW";
-	for (auto const& pair : answer_frequency) {
-		std::cout << "{" << pair.first << ": " << pair.second << "}\n";
 	}
 }
 
@@ -87,7 +80,7 @@ void check::returnString()
 
 string check::correct(string guess)
 {
-	string result = "";
+	
 	for (int character = 0; character < guess.length(); character++) {
 		// add [ ] for each character
 		result += openSquare + guess[character] + closeSquare;
@@ -97,8 +90,6 @@ string check::correct(string guess)
 
 void check::frequency()
 {
-	
-	string tempWord = "";
 	// remove duplicates 
 	std::unordered_set<char> exists;
 
@@ -106,7 +97,6 @@ void check::frequency()
 		if (exists.insert(letter).second) tempWord += letter;
 	}
 	// add characters to map
-	cout << tempWord << "\n";
 	for (int i = 0; i < tempWord.length(); i++) {
 		answer_frequency.insert(pair<char, int>(tempWord[i], 0));
 	}
@@ -116,10 +106,6 @@ void check::frequency()
 		answer_frequency[Answer.at(characters)]++;
 	}
 
-	// print map
-	for (auto const& pair : answer_frequency) {
-		std::cout << "{" << pair.first << ": " << pair.second << "}\n";
-	}
 }
 
 
