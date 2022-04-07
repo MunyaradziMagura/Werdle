@@ -85,7 +85,7 @@ string gameInstance::getGuess()
 {
 	std::cout << "guess >";
 	cin >> myGuess;
-	std::transform(game_guess.begin(), game_guess.end(), game_guess.begin(), ::tolower);
+	std::transform(myGuess.begin(), myGuess.end(), myGuess.begin(), ::tolower);
 	return myGuess;
 }
 
