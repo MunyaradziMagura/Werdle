@@ -18,6 +18,7 @@ public:
 	// delete gameDetails map
 	void deleteGameDetails();
 	void previousWords();
+	bool isLetter(string checkguess);
 	string getGuess();
 };
 

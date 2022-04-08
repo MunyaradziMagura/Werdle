@@ -85,16 +85,24 @@ string gameInstance::getGuess()
 {
 	std::cout << "guess >";
 	cin >> myGuess;
+	while (isLetter(myGuess) == false) {
+		std::cout << "enter valid characters a-z\nguess >";
+		cin >> myGuess;
+		isLetter(myGuess);
+	}
 	std::transform(myGuess.begin(), myGuess.end(), myGuess.begin(), ::tolower);
 	return myGuess;
 }
-
 void gameInstance::previousWords()
 {
-	
-	
 	for (vector<string>::iterator it = previousGuesses.begin(); it != previousGuesses.end(); it++)
 	{
 		cout << *it << "\n";
 	}
+}
+
+bool gameInstance::isLetter(const string checkguess)// return true if there are no non-alpha characters
+{
+	for (unsigned char c : checkguess) if (!std::isalpha(c)) return false;
+	return true;
 }
