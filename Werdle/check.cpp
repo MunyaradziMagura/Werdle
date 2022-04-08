@@ -47,6 +47,7 @@ void check::findCorrect()
 			answer_frequency.find(Answer.at(character))->second--;
 		}
 		else {
+			
 			guessResults.at(character) += ' ';
 			guessResults.at(character) += Word.at(character);
 			guessResults.at(character) += ' ';
