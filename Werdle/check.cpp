@@ -47,10 +47,7 @@ void check::findCorrect()
 			answer_frequency.find(Answer.at(character))->second--;
 		}
 		else {
-			
-			guessResults.at(character) += ' ';
 			guessResults.at(character) += space + Word.at(character) + space;
-			guessResults.at(character) += ' ';
 		}
 	}
 }
