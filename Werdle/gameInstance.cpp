@@ -13,6 +13,7 @@ map<string, int> gameInstance::play(int sessionNumber)
 	//get word from dictionary;
 	std::unique_ptr<Dictionary> dictionary = std::make_unique<Dictionary>();
 	dictionary_word = dictionary->getWord(sessionNumber);
+	// begin game: game will run for 6 guesses
 	game_guess = getGuess();
 	for (auto itr = 0; itr < 6; itr++) {
 		auto game = std::make_shared<check>();
@@ -77,6 +78,7 @@ map<string, int> gameInstance::play(int sessionNumber)
 
 void gameInstance::deleteGameDetails()
 {
+	// cleanup
 	previousGuesses = {};
 	gameDetails.clear();
 }
@@ -85,16 +87,21 @@ string gameInstance::getGuess()
 {
 	std::cout << "guess >";
 	cin >> myGuess;
+
+	// check that guess is only letters
 	while (isLetter(myGuess) == false) {
 		std::cout << "Enter valid characters a-z\nguess >";
 		cin >> myGuess;
 		isLetter(myGuess);
 	}
+
+	// transform guess to lower case
 	std::transform(myGuess.begin(), myGuess.end(), myGuess.begin(), ::tolower);
 	return myGuess;
 }
 void gameInstance::previousWords()
 {
+	// print out the previous guesses, stored in the vector 
 	for (vector<string>::iterator it = previousGuesses.begin(); it != previousGuesses.end(); it++)
 	{
 		cout << *it << "\n";

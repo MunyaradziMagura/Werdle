@@ -19,11 +19,13 @@ string check::getCheckWord()
 		return correct(Word);
 	}
 	else {
+		// get the frequency at which a word appers
 		frequency();
 		// find letters which are correct and in the right index	
 		findCorrect();
 		// find letters which are correct and in the wrong index	
 		findIncorrect();
+		// return the result of check 
 		returnString();
 	}
 	return result;
@@ -31,6 +33,7 @@ string check::getCheckWord()
 // memory management
 void check::wordDelete()
 {
+	// re-set all values
 	result = "";
 	guessCorrect = { true, true, true, true, true };
 	guessResults = { "","","","","" };
@@ -40,6 +43,7 @@ void check::wordDelete()
 
 void check::findCorrect()
 {
+	// check if the at index character is equal to the answers character at the same index 
 	for (auto character = 0; character < Word.length(); character++) {
 		if (Word.at(character) == Answer.at(character)) {
 			guessResults.at(character) = openSquare + Word[character] + closeSquare;
@@ -54,11 +58,17 @@ void check::findCorrect()
 
 void check::findIncorrect()
 {
+	// characters in guess 
 	for (int character = 0; character < 5; character++) {
+		// if the character at the guess hasnt been assigned |c| or [c]-- character is false
 		if (guessCorrect.at(character) == true ) {
+			// letters in answer 
 			for (int letter = 0; letter < 5; letter++) {
+				// check if the letter frequency is greater than 0, meaning the character is valid in the guess
 				if (answer_frequency.find(Answer.at(letter))->second > 0) {
+					// check if the characters index is equal to the answer index 
 					if (Word.at(character) == Answer.at(letter) && guessCorrect[letter] == true) {
+						// add bars & update the frequency & vector position of the character
 						answer_frequency.find(Answer.at(letter))->second--;
 						guessCorrect.at(character) = false;
 						guessResults.at(character) = bar + Word[character] + bar;
@@ -71,6 +81,7 @@ void check::findIncorrect()
 
 void check::returnString()
 {
+	// get each value from the vector and add it to the result value
 	for (vector<string>::iterator it = guessResults.begin(); it != guessResults.end(); it++)
 	{
 		result += *it;
@@ -79,6 +90,7 @@ void check::returnString()
 
 string check::correct(string guess)
 {
+	// if guess == answer, add squares to all letters
 	std::for_each(guess.begin(), guess.end(), [&](char character) {
 		result += openSquare + character + closeSquare; 
 		});
