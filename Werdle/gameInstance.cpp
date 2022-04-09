@@ -10,15 +10,16 @@ using namespace std;
 map<string, int> gameInstance::play(int sessionNumber)
 {
 	
-	check game;
-	Dictionary dictionary;
-	dictionary_word = dictionary.getWord(sessionNumber);
+	//get word from dictionary;
+	std::unique_ptr<Dictionary> dictionary = std::make_unique<Dictionary>();
+	dictionary_word = dictionary->getWord(sessionNumber);
 	game_guess = getGuess();
 	for (auto itr = 0; itr < 6; itr++) {
+		auto game = std::make_shared<check>();
 		// make sure the guess is less than 6 characters 
 		if (game_guess.size() == 5) {
-			game.checkWord(dictionary_word, game_guess);
-			previousGuesses.push_back(game.getCheckWord());
+			game->checkWord(dictionary_word, game_guess);
+			previousGuesses.push_back(game->getCheckWord());
 			
 			if (game_guess == dictionary_word) {
 				previousWords();
@@ -57,10 +58,10 @@ map<string, int> gameInstance::play(int sessionNumber)
 		}
 		if (itr < 5 ) {
 			previousWords();
-			game.wordDelete();
+			game->wordDelete();
 			game_guess = getGuess();
 			// clear previous game result
-			game.wordDelete();
+			game->wordDelete();
 		} else {
 			break;
 		}

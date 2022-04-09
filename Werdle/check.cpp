@@ -49,7 +49,7 @@ void check::findCorrect()
 		else {
 			
 			guessResults.at(character) += ' ';
-			guessResults.at(character) += Word.at(character);
+			guessResults.at(character) += space + Word.at(character) + space;
 			guessResults.at(character) += ' ';
 		}
 	}

@@ -1,6 +1,7 @@
 #include <iostream>
 using namespace std;
 #include <cstdio>
+#include <memory>
 #include "view.h"
 #include "gameInstance.h"
 #include "gameStats.h"
@@ -8,42 +9,46 @@ using namespace std;
 int main()
 {
     
-    view view;
-    gameInstance gameInstance;
+    //view view;
+    //gameInstance gameInstance;
     Werdle werdle;
-    gameStats gameStats;
+    //gameStats gameStats;
+    auto currentGame = std::make_shared<gameStats>();
+    
     while(true) {
-        view.Home();
+        std::unique_ptr<view> myView = std::make_unique<view>();
+        auto instanceGame = std::make_shared<gameInstance>();
+        myView->Home();
         cout << ">";
         cin >> werdle.selection;
         // Play screen
         if (werdle.selection == 1) {
             // begin game 
-            werdle.gamestats = gameInstance.play(werdle.session);
+            werdle.gamestats = instanceGame->play(werdle.session);
             // game was lost
             if (werdle.gamestats.empty()) {
-                gameStats.setStreak(false);
+                currentGame->setStreak(false);
+                currentGame->setStreak(false);
             }
             else {
-                gameStats.setStreak(true);
-                gameStats.winCounter();
+                currentGame->setStreak(true);
+                currentGame->winCounter();
             }
             // set guess distribution 
-            gameStats.setGuessDistribution(werdle.gamestats);
+            currentGame->setGuessDistribution(werdle.gamestats);
             // update games played
-            gameStats.setPlayed();
+            currentGame->setPlayed();
             // increase session
             werdle.session++;
-            gameInstance.deleteGameDetails();
-            
+            instanceGame->deleteGameDetails();
         }
         // Statistics screen
         else if (werdle.selection == 2) {
-            cout << gameStats.getGameStats() << endl;
+            cout << currentGame->getGameStats() << endl;
         }
         // Help screen
         else if (werdle.selection == 3) {
-            view.Help();
+            myView->Help();
         }
     }  
 }
